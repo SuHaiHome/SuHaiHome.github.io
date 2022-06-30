@@ -464,6 +464,11 @@ class Solut">
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-06-30
+                </div>
+                
 
                 
                 <div class="info-break-policy">
@@ -473,8 +478,18 @@ class Solut">
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    33 分
+                </div>
+                
 
                 
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -1757,7 +1772,7 @@ struct Node {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://suhaihome.club/2022/06/30/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">http://suhaihome.club/2022/06/30/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</a>
+                    <a href="http://suhaihome.club/2022/06/30/leetcode-mei-ri-yi-ti/">http://suhaihome.club/2022/06/30/leetcode-mei-ri-yi-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1975,7 +1990,7 @@ struct Node {
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/06/30/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">
+                <a href="/2022/06/30/leetcode-mei-ri-yi-ti/">
                     <div class="card-image">
                         
                         
@@ -2025,7 +2040,7 @@ struct Node {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/30/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">
+                <a href="/2022/06/30/c-yu-yan-ji-chu/">
                     <div class="card-image">
                         
                         
@@ -2073,6 +2088,43 @@ struct Node {
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 阿海的小站<br />'
+            + '文章作者: Shome<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者Shome所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
@@ -2252,6 +2304,9 @@ struct Node {
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">9.2k</span>
             
             
             
